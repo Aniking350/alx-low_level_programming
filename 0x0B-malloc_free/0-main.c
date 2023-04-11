@@ -9,7 +9,9 @@
  *
  * Return: Nothing.
  */
+
 void simple_print_buffer(char *buffer, unsigned int size)
+
 {
     unsigned int i;
 
@@ -35,7 +37,9 @@ void simple_print_buffer(char *buffer, unsigned int size)
  *
  * Return: Always 0.
  */
+
 int main(void)
+
 {
     char *buffer;
 
