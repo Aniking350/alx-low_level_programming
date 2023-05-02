@@ -12,24 +12,23 @@ size_t print_listint_safe(const listint_t *head);
  * Return: If the list is not looped - 0.
  * Otherwise - the number of unique nodes in the list.
  */
-
 size_t looped_listint_len(const listint_t *head)
 {
 	const listint_t *tortoise, *hare;
 	size_t nodes = 1;
 
-	if(head == NULL || head->next == NULL)
-		return(0);
+	if (head == NULL || head->next == NULL)
+		return (0);
 
 	tortoise = head->next;
 	hare = (head->next)->next;
 
-	while(hare)
+	while (hare)
 	{
-		if(tortoise == hare)
+		if (tortoise == hare)
 		{
 			tortoise = head;
-			while(tortoise != hare)
+			while (tortoise != hare)
 			{
 				nodes++;
 				tortoise = tortoise->next;
@@ -37,7 +36,7 @@ size_t looped_listint_len(const listint_t *head)
 			}
 
 			tortoise = tortoise->next;
-			while(tortoise != hare)
+			while (tortoise != hare)
 			{
 				nodes++;
 				tortoise = tortoise->next;
@@ -59,7 +58,6 @@ size_t looped_listint_len(const listint_t *head)
  *
  * Return: The number of nodes in the list.
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index = 0;
@@ -77,14 +75,14 @@ size_t print_listint_safe(const listint_t *head)
 
 	else
 	{
-		for(index = 0; index < nodes; index++)
-	{
-		printf("[%p] %d\n", (void *)head, head->n);
- 		head = head->next;
-	}
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
 
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
- 	return (nodes);
+	return (nodes);
 }
